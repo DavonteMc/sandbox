@@ -32,12 +32,11 @@ var duration = 0;
 function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
     if (modelName == "Model XYZ") {
-        var durationTotal = duration * 100;
-        costLabel.innerHTML = parseFloat(durationTotal);
-    } else { (modelName == "Model CPRG")
-        var durationTotal = duration * 213;
-        costLabel.innerHTML = parseFloat(durationTotal);
-    }
+        var xyzTotal = duration * 100;
+        costLabel.innerHTML = parseFloat(xyzTotal);
+    } else if (modelName == "Model CPRG");
+        var cprgTotal = duration * 213;
+        costLabel.innerHTML = parseFloat(cprgTotal);
 }
 
 /****************** model button logic ******************/
@@ -58,14 +57,14 @@ let modelButton = document.getElementById("model-button");
 
 function changeModel() {
     if (modelName == "Model XYZ") {
-        modelName = "Model CPRG"
+        modelName = "Model CPRG";
         document.getElementById("model-text").innerHTML = modelName;
     } 
     else if (modelName == "Model CPRG") {
-        modelName = "Model XYZ"
+        modelName = "Model XYZ";
         document.getElementById("model-text").innerHTML = modelName;    
     }
-    recalculate()
+    recalculate();
 }
 
 modelButton.addEventListener("click", changeModel);
@@ -82,12 +81,12 @@ modelButton.addEventListener("click", changeModel);
 */
 
 // INSERT YOUR CODE HERE
-let durationButton = document.getElementById("duration-button")
+let durationButton = document.getElementById("duration-button");
 
 function changeDuration() {
     duration = parseInt(prompt("Enter your rental duration:"));
     document.getElementById("duration-text").innerHTML = duration;
-    recalculate()
+    recalculate();
 }
 
 durationButton.addEventListener("click", changeDuration);
